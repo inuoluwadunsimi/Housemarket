@@ -1,6 +1,6 @@
-import { useEffect,useState } from 'react'
+import { useState } from 'react'
 import {getAuth,updateProfile} from 'firebase/auth'
-import {useNavigate,Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {db} from '../firebase.config'
 import {updateDoc,doc} from 'firebase/firestore'
 import {toast} from 'react-toastify'
@@ -38,7 +38,7 @@ function Profile() {
 
       }
     } catch (error) {
-       error.toast('Unable to update changes')
+       toast.error('Unable to update changes')
     }
   }
 
