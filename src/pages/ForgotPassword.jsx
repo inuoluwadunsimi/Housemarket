@@ -8,9 +8,7 @@ function ForgotPassword() {
     const [email,setEmail ] = useState('')
 
 
-   const onChange = () =>{
-
-   }
+   const onChange = (e) => setEmail(e.target.value)
 
    const onSubmit = async (e) =>{
       e.preventDefault()
@@ -26,7 +24,7 @@ function ForgotPassword() {
    }
 
     return (
-      <div>
+      <div  className='pageContainer'>
   
           <header>
             <p className="pageHeader"> Forgot Passowrd</p>
