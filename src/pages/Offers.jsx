@@ -1,5 +1,4 @@
 import {useEffect,useState} from 'react'
-import {useParams} from 'react-router-dom'
 import {collection,getDocs,query,where,orderBy,limit,startAfter} from 'firebase/firestore'
 import {db} from '../firebase.config'
 import {toast} from 'react-toastify'
@@ -13,7 +12,6 @@ function Offers() {
     const [lastFetchedListing,setLastFetchedListing] = useState(null)
 
 
-    const params = useParams()
 
     useEffect(() =>{
         const fetchListings = async () =>{
@@ -27,7 +25,7 @@ function Offers() {
                 // query execution
 
                 const querySnap  = await getDocs(q)
-
+                   // eslint-disable-next-line
                 const lastVisible = querySnap.docs[querySnap.docs.length - 1]
 
 
